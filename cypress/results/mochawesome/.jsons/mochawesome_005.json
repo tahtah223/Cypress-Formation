@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-31T13:04:12.640Z",
+    "end": "2025-03-31T13:04:19.320Z",
+    "duration": 6680,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "17d0a883-6b4c-490a-a18b-e5291bf5787a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\exerciceDropdownlist.cy.js",
+      "file": "cypress\\e2e\\exerciceDropdownlist.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1e155bb1-7c23-487a-ba33-d8b083f081f8",
+          "title": "Exercice dropdown List",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Exercice dropdown List 1",
+              "fullTitle": "Exercice dropdown List Exercice dropdown List 1",
+              "timedOut": null,
+              "duration": 6409,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\");\ncy.get('[name=\"username\"]').type(\"Admin\");\ncy.get('[name=\"password\"]').type(\"admin123\");\ncy.get('[type=\"submit\"]').click();\ncy.get('.oxd-sidepanel-body').contains(\"Leave\").click();\nfor (let index = 0; index <= 1; index++) {\n  cy.get(':nth-child(4) > .oxd-topbar-body-nav-tab-item').click();\n  cy.get('.oxd-topbar-body-nav-tab-link').eq(index).then(textElement => {\n    cy.wrap(textElement).click();\n    const element = textElement.text();\n    cy.get('.oxd-table-filter-title').should('contain', element);\n  });\n}",
+              "err": {},
+              "uuid": "ff0f5263-dca8-4d7c-86e6-8a089ff79911",
+              "parentUUID": "1e155bb1-7c23-487a-ba33-d8b083f081f8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ff0f5263-dca8-4d7c-86e6-8a089ff79911"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6409,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\results\\mochawesome\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

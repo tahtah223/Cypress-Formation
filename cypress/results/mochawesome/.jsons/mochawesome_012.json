@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-31T13:07:03.641Z",
+    "end": "2025-03-31T13:07:18.651Z",
+    "duration": 15010,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b6889c6b-32db-430b-ba5a-607c01e2f0a4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\alerteJavaScript.cy.js",
+      "file": "cypress\\e2e\\alerteJavaScript.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Gestion des alertes prompt avec cypress",
+          "fullTitle": "Gestion des alertes prompt avec cypress",
+          "timedOut": null,
+          "duration": 2832,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit(\"https://demoqa.com/alerts\", {\n  onBeforeLoad(win) {\n    cy.stub(win, \"prompt\").returns(\"Message alerte\");\n  }\n});\ncy.get(\"#promtButton\").click();",
+          "err": {},
+          "uuid": "53cf6695-a58e-4340-beca-ede3e0226910",
+          "parentUUID": "b6889c6b-32db-430b-ba5a-607c01e2f0a4",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Gestion de la boite de dialogue confirm",
+          "fullTitle": "Gestion de la boite de dialogue confirm",
+          "timedOut": null,
+          "duration": 2268,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit(\"https://demoqa.com/alerts\");\ncy.get(\"#confirmButton\").click();\ncy.on(\"window:confirm\", text => {\n  expect(text).to.equal(\"Do you confirm action?\");\n  return false; //true pour ok et false pour cancel\n});",
+          "err": {},
+          "uuid": "8ff8438c-d414-4373-994c-551a904952a1",
+          "parentUUID": "b6889c6b-32db-430b-ba5a-607c01e2f0a4",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "exo 1 Vérifie que l'alerte apparaît après 5 secondes",
+          "fullTitle": "exo 1 Vérifie que l'alerte apparaît après 5 secondes",
+          "timedOut": null,
+          "duration": 1919,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit(\"https://demoqa.com/alerts\");\ncy.window().then(win => {\n  const startTime = Date.now(); // démarrer le chrono\n  cy.stub(win, \"alert\").callsFake(message => {\n    const elapsedTime = Date.now() - startTime;\n    // Vérifie le message d'alerte\n    expect(message).to.equal(\"This alert appeared after 5 seconds\");\n    // Vérifie que le temps écoulé est proche de 5 secondes\n    expect(elapsedTime).to.be.within(4900, 6000); // marge de sécurité\n    cy.log(`L'alerte est apparue après ${elapsedTime} ms`);\n  }).as(\"alertStub\");\n  cy.get(\"#timerAlertButton\").click();\n});",
+          "err": {},
+          "uuid": "20771eed-fe72-4199-a9f4-5d0c9b6bb6ca",
+          "parentUUID": "b6889c6b-32db-430b-ba5a-607c01e2f0a4",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Exo 2 : Gestion de la boite de dialogue ",
+          "fullTitle": "Exo 2 : Gestion de la boite de dialogue ",
+          "timedOut": null,
+          "duration": 1406,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit(\"https://demoqa.com/alerts\");\ncy.get(\"#confirmButton\").click();\n// Afficher et vérifier ce qu'il y a dans le confirmResult\ncy.get(\"#confirmResult\").should(\"be.visible\").then($result => {\n  const resultText = $result.text();\n  cy.log(\"Le texte affiché est : \" + resultText);\n});",
+          "err": {},
+          "uuid": "56ad4c76-fc90-43df-846a-4a53f67a2afe",
+          "parentUUID": "b6889c6b-32db-430b-ba5a-607c01e2f0a4",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Exo 3 : Gestion de la boite de dialogue boutton prompt ",
+          "fullTitle": "Exo 3 : Gestion de la boite de dialogue boutton prompt ",
+          "timedOut": null,
+          "duration": 1255,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "const monNom = \"DIALLO\";\ncy.visit(\"https://demoqa.com/alerts\", {\n  onBeforeLoad(win) {\n    cy.stub(win, \"prompt\").returns(monNom);\n  }\n});\ncy.get(\"#promtButton\").click();\n// Afficher et vérifier ce qu'il y a dans PromptResult\ncy.get(\"#promptResult\").should(\"be.visible\").then($result => {\n  const resultText = $result.text();\n  cy.log(\"Le texte affiché est : \" + resultText);\n});",
+          "err": {},
+          "uuid": "6b12b6b3-ae31-44c5-8d97-52d73b994fbf",
+          "parentUUID": "b6889c6b-32db-430b-ba5a-607c01e2f0a4",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Exo 3 : Gestion de la boite de dialogue boutton prompt ANNULER ",
+          "fullTitle": "Exo 3 : Gestion de la boite de dialogue boutton prompt ANNULER ",
+          "timedOut": null,
+          "duration": 1257,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "/* cy.visit('https://demoqa.com/alerts')\n      cy.get('#promtButton').click();\n      return false;\n      cy.on('window:confirm',(text)=>{\n          expect(text).to.equal('Please enter your name')\n          return false; //true pour ok et false pour cancel\n        });\n  }); */\ncy.visit(\"https://demoqa.com/alerts\", {\n  onBeforeLoad(win) {\n    cy.stub(win, \"prompt\").returns(\"null\");\n  }\n});\ncy.get(\"#promtButton\").click();\ncy.contains(\"Message alerte\").should(\"not.exist\");",
+          "err": {},
+          "uuid": "a539f63c-6be7-4fd9-b329-4fce3d51777d",
+          "parentUUID": "b6889c6b-32db-430b-ba5a-607c01e2f0a4",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [
+        {
+          "uuid": "7951763f-17c6-4ba8-bfc0-f975a0d6d57d",
+          "title": "Gestion des boites de dialogue avec Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Gestion des alertes avec Cypress",
+              "fullTitle": "Gestion des boites de dialogue avec Cypress Gestion des alertes avec Cypress",
+              "timedOut": null,
+              "duration": 1344,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://demoqa.com/alerts\");\ncy.get(\"#alertButton\").click();\ncy.on(\"window:alert\", text => {\n  expect(text).to.equal(\"You clicked a button\");\n});",
+              "err": {},
+              "uuid": "cda145a9-510a-4242-b935-62cde5751812",
+              "parentUUID": "7951763f-17c6-4ba8-bfc0-f975a0d6d57d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cda145a9-510a-4242-b935-62cde5751812"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1344,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [
+        "53cf6695-a58e-4340-beca-ede3e0226910",
+        "8ff8438c-d414-4373-994c-551a904952a1",
+        "20771eed-fe72-4199-a9f4-5d0c9b6bb6ca",
+        "56ad4c76-fc90-43df-846a-4a53f67a2afe",
+        "6b12b6b3-ae31-44c5-8d97-52d73b994fbf",
+        "a539f63c-6be7-4fd9-b329-4fce3d51777d"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 10937,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\results\\mochawesome\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

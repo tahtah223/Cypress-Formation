@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-31T13:07:54.766Z",
+    "end": "2025-03-31T13:07:55.158Z",
+    "duration": 392,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "506f4079-d1f1-4cb1-8b47-195ac47ed69c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\champDate.cy.js",
+      "file": "cypress\\e2e\\champDate.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d8a6b5e9-1a9c-4f67-99c1-9403024125ec",
+          "title": "Sélecteur Css",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test date picker",
+              "fullTitle": "Sélecteur Css Test date picker",
+              "timedOut": null,
+              "duration": 285,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const dateActuelle = dateDuJour();\nconst dateActuellePlusDeux = dateDuJourPlusDeux();\ncy.log(\"La date du jour est \", dateActuelle);\ncy.log(\"La date du jour plus deux \", dateActuellePlusDeux);\ncy.get(\".oxd-sidepanel-body\").contains(\"My Info\").click();\ncy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-input').then(datePicker => {\n  cy.wrap(datePicker).clear({\n    force: true\n  }).type(dateActuellePlusDeux);\n  cy.wrap(datePicker).should(\"have.value\", dateActuellePlusDeux, {\n    force: true\n  });\n  cy.screenshot(\"date picker\");\n});",
+              "err": {
+                "message": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Sélecteur Css`",
+                "estack": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Sélecteur Css`\n    at Context.visit (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:133084:70)\n    at wrapped (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:139902:43)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypressautomation/./cypress/support/commands.js:29:7)\n    at wrapped (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:139902:43)",
+                "diff": null
+              },
+              "uuid": "d93ee935-2072-463b-9728-6dd06033c5cd",
+              "parentUUID": "d8a6b5e9-1a9c-4f67-99c1-9403024125ec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d93ee935-2072-463b-9728-6dd06033c5cd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 285,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\results\\mochawesome\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-31T13:07:41.808Z",
+    "end": "2025-03-31T13:07:47.370Z",
+    "duration": 5562,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4e406ade-6afa-4dd1-825f-ce7bd4e23d52",
+      "title": "",
+      "fullFile": "cypress\\e2e\\baseURL.cy.js",
+      "file": "cypress\\e2e\\baseURL.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4712486b-5b03-4cf1-90b4-829fdba023fd",
+          "title": "Difference entre les commandes Jquery et Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Utiliser les commandes Jquery et Cypress",
+              "fullTitle": "Difference entre les commandes Jquery et Cypress Utiliser les commandes Jquery et Cypress",
+              "timedOut": null,
+              "duration": 5451,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/', {\n  timeout: 30000\n});\ncy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Admin');\ncy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123');\ncy.get('.oxd-button').click();\n// cy.wait(1000)\ncy.get(\".oxd-sidepanel-body\").wait(1000).contains(\"Admin\" /*{timeout: 15000}*/).click();",
+              "err": {},
+              "uuid": "bbf3abdd-34ce-48d9-9756-3ed769d75451",
+              "parentUUID": "4712486b-5b03-4cf1-90b4-829fdba023fd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bbf3abdd-34ce-48d9-9756-3ed769d75451"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5451,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\results\\mochawesome\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

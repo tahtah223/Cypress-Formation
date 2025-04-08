@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-31T13:04:47.368Z",
+    "end": "2025-03-31T13:04:48.032Z",
+    "duration": 664,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dc4a25bc-a6a8-494d-a8ab-959da5a5a766",
+      "title": "",
+      "fullFile": "cypress\\e2e\\selecteurCss.cy.js",
+      "file": "cypress\\e2e\\selecteurCss.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "082effd9-5c3c-45ee-923a-48d7f5b56a11",
+          "title": "Sélecteur Css",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Utilisation de la commande invoke",
+              "fullTitle": "Sélecteur Css Utilisation de la commande invoke",
+              "timedOut": null,
+              "duration": 595,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".oxd-sidepanel-body\").contains(\"Admin\").click();\n// 1 - avec contain\ncy.get('[type=\"submit\"]').should(\"contain\", \"Search\");\n// 2 - avec then\ncy.get('[type=\"submit\"]').then(texteBouton => {\n  expect(texteBouton.text()).to.equal(\" Search \");\n  // 3 - avec invoke\n  cy.get('[type=\"submit\"]').invoke(\"text\").then(texte => {\n    expect(texte).to.equal(\" Search \");\n  });\n  // 4 - invoke avec attribut\n  cy.get('[type=\"submit\"]').invoke(\"attr\", \"class\").then(classe => {\n    expect(classe).to.contain(\"oxd-button\");\n  });\n  // 5 - invoke avec propriété\n  cy.get('[type=\"submit\"]').invoke(\"prop\", \"tagName\").then(tagName => {\n    expect(tagName.toLowerCase()).to.equal(\"button\");\n  });\n  cy.get(\":nth-child(2) > .oxd-input\").type(\"text\");\n});",
+              "err": {
+                "message": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Sélecteur Css`",
+                "estack": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Sélecteur Css`\n    at Context.visit (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:133084:70)\n    at wrapped (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:139902:43)\nFrom Your Spec Code:\n    at CommunPO.visitPageAcceuil (webpack://cypressautomation/./cypress/support/pageObject/communPO.js:5:11)\n    at Context.eval (webpack://cypressautomation/./cypress/e2e/selecteurCss.cy.js:5:13)",
+                "diff": null
+              },
+              "uuid": "bba583fc-2500-4273-8052-06addca6ab02",
+              "parentUUID": "082effd9-5c3c-45ee-923a-48d7f5b56a11",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bba583fc-2500-4273-8052-06addca6ab02"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 595,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\results\\mochawesome\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

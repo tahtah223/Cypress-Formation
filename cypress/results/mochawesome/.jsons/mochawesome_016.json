@@ -1,0 +1,128 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-31T13:08:03.380Z",
+    "end": "2025-03-31T13:08:03.794Z",
+    "duration": 414,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "478477db-c09e-4f39-805e-36a94f51077e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dropdowList.cy.js",
+      "file": "cypress\\e2e\\dropdowList.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "23681ebb-e59d-4421-b9ef-32f66e5b4435",
+          "title": "Interraction avec Liste dropdown",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "02b39c44-404b-460e-ae97-fd2d437a0f69",
+              "title": "Sélecteur Css",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Select element dropdown partie 2",
+                  "fullTitle": "Interraction avec Liste dropdown Sélecteur Css Select element dropdown partie 2",
+                  "timedOut": null,
+                  "duration": 315,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "for (let index = 0; index <= 4; index++) {\n  cy.get('.--parent > .oxd-topbar-body-nav-tab-item').click();\n  cy.get('.oxd-topbar-body-nav-tab-link').eq(index).then(textElement => {\n    cy.wrap(textElement).click();\n    const element = textElement.text();\n    /*                     cy.get('.orangehrm-main-title').should('contain', element);\n     */\n    cy.get('.orangehrm-main-title').then(ele => {\n      expect(ele.text()).to.contain(element);\n    });\n  });\n}\ncy.get('.oxd-button').should('contain', 'Add').and('have.css', 'background-color', 'rgb(118, 188, 33)'); //faire regarder le code en rgb sur internet et mettre des epaces apres les virgules",
+                  "err": {
+                    "message": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Sélecteur Css`",
+                    "estack": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Sélecteur Css`\n    at Context.visit (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:133084:70)\n    at wrapped (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:139902:43)\nFrom Your Spec Code:\n    at CommunPO.visitPageAcceuil (webpack://cypressautomation/./cypress/support/pageObject/communPO.js:5:11)\n    at Context.eval (webpack://cypressautomation/./cypress/e2e/dropdowList.cy.js:13:21)",
+                    "diff": null
+                  },
+                  "uuid": "0261951b-83c1-4ca3-b2b5-c3c03fdd386d",
+                  "parentUUID": "02b39c44-404b-460e-ae97-fd2d437a0f69",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "0261951b-83c1-4ca3-b2b5-c3c03fdd386d"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 315,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\results\\mochawesome\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
