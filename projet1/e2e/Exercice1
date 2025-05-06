@@ -1,0 +1,13 @@
+describe('Projet 1', () => {
+    
+  it("Exercice 1",()=>{
+      cy.visit(
+          "https://todomvc.com/examples/react/dist/#/"
+          );
+        
+
+  })
+
+
+
+});

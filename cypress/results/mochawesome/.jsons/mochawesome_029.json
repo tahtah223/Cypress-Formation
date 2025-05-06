@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-06T21:51:09.091Z",
+    "end": "2025-05-06T21:51:17.377Z",
+    "duration": 8286,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "47813d62-4c24-4356-b093-cb0f0c20804d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\features\\connexion.feature",
+      "file": "cypress\\e2e\\features\\connexion.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8de72960-66f5-4a11-954f-5a88922b9bad",
+          "title": "fonctionnalité de connexion",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Connexion réussie",
+              "fullTitle": "fonctionnalité de connexion Connexion réussie",
+              "timedOut": null,
+              "duration": 6067,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "8bf469b2-4ea2-4c86-a382-31893ea34f97",
+              "parentUUID": "8de72960-66f5-4a11-954f-5a88922b9bad",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Connexion en echec",
+              "fullTitle": "fonctionnalité de connexion Connexion en echec",
+              "timedOut": null,
+              "duration": 2124,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "811bce46-2cc4-41e4-b6af-9b4ae6125f82",
+              "parentUUID": "8de72960-66f5-4a11-954f-5a88922b9bad",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8bf469b2-4ea2-4c86-a382-31893ea34f97",
+            "811bce46-2cc4-41e4-b6af-9b4ae6125f82"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8191,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\results\\mochawesome\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

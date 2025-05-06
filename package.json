@@ -18,7 +18,7 @@
     "cypress:spec-systemUser": "cypress run --spec cypress/e2e/features/systemUsers.feature"
   },
   "keywords": [],
-  "author": "tahtah",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^14.2.0",
