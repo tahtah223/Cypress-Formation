@@ -8,21 +8,20 @@
     "cypress:open": "cypress open",
     "cypress:runner": "cypress open --e2e --browser chrome",
     "cypress:spec": "cypress run --spec cypress/e2e/tableau.cy.js",
-    "rapport:test": "npx mochawesome-merge cypress/results/mochawesome/*.json -o mochawesome.json ; npx marge mochawesome.json",
+    "rapport:test": "npx mochawesome-merge cypress/results/mochawesome/*.json -o mochawesome.json && npx marge mochawesome.json",
     "suppression:rapport": "rimraf ./cypress/results/mochawesome",
     "suppression:rapport-mochawesome": "rimraf mochawesome-report",
-    "cypress:report": "npm run suppression:rapport && npm run suppression:rapport-mochawesome && npm run cypress-runn && npm run rapport:test",
+    "cypress:report": "npm run suppression:rapport && npm run suppression:rapport-mochawesome && npm run cypress-run && npm run rapport:test",
     "cypress:dashboard": "npx cypress run --record --key 289b756f-91dd-4045-9fdb-6ff66ca000c0",
     "start-json-server": "json-server --watch db.json",
-    "cypress:spec-connexion": "cypress run --spec cypress/e2e/features/connexion.feature",                   
-    "cypress:spec-systemUser": "cypress run--spec cypress/e2e/features/systemUsers.feature"
-  },
+    "cypress:spec-connexion": "cypress run --spec cypress/e2e/features/connexion.feature",
+    "cypress:spec-systemUser": "cypress run --spec cypress/e2e/features/systemUsers.feature"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^14.3.3",
+    "cypress": "^14.2.0",
     "json-server": "^0.17.4",
     "moment": "^2.29.4",
     "rimraf": "^6.0.1"
