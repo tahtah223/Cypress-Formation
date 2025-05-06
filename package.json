@@ -13,7 +13,7 @@
     "suppression:rapport-mochawesome": "rimraf mochawesome-report",
     "cypress:report": "npm run suppression:rapport && npm run suppression:rapport-mochawesome && npm run cypress-runn && npm run rapport:test",
     "cypress:dashboard": "npx cypress run --record --key 289b756f-91dd-4045-9fdb-6ff66ca000c0",
-    "start-json-server": "json-server --watch db.json"
+    "start-json-server": "json-server --watch db.json",
     "cypress:spec-connexion": "cypress run --spec cypress/e2e/features/connexion.feature",                   
     "cypress:spec-systemUser": "cypress run--spec cypress/e2e/features/systemUsers.feature"
   },
