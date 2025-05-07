@@ -17,7 +17,6 @@
     "cypress:spec-connexion": "cypress run --spec cypress/e2e/features/connexion.feature",                   
     "cypress:spec-systemUser": "cypress run--spec cypress/e2e/features/systemUsers.feature"
   },
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
